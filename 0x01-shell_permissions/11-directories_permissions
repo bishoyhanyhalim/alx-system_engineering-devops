@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d -exec chmod g+x,o+x {} \;
+find . -type d -exec chmod g+x,o+x {} 
