@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this task print word 10 times
+
+num=1
+while [ $num -le 10 ]
+do
+	echo "Best School"
+	(( num++ ))
+done
