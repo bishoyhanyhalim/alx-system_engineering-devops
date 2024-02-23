@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# this is a clock so cool
+
+hours=0
+
+while [ $hours -le 12 ]
+do
+	echo "Hour: $hours"
+	
+	min=1
+
+	while [ $min -le 59 ]
+	do
+		echo "$min"
+		(( min++ ))
+	done
+	
+	(( hours++ ))
+done
