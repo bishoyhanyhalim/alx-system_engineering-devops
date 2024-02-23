@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this now task 4 if and else
 
-num=1
+num=0
 
 while [ $num -le 10 ]
 do
