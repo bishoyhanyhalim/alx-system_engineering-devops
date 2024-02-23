@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this task now show the list format
+
+all=$(ls)
+
+for i in $all ;
+do
+	echo "$i" | cut -d "-" -f 2
+done 
