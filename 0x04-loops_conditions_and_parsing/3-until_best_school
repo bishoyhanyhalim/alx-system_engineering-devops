@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this task print word best
+
+nums=0
+until [ $nums -ge 10 ]
+do
+	echo "Best School"
+	nums=$(( nums+1 ))
+done
