@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this is now new task 102
+
+awk '{print $1 " " $9}' apache-access.log
