@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "write file name ^_^"
+
+read filename
+
+touch "${filename}"
+chmod +x "${filename}"

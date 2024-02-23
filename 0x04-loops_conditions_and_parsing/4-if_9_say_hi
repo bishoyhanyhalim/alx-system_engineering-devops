@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this now task 4 if and else
+
+num=1
+
+while [ $num -le 10 ]
+do
+	if [[ $num -le 8 ]]; then
+		echo "Best School"
+	elif [[ $num -eq 9 ]]; then
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	(( num++ ))
+done
