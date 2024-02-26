@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "Enter your script name ^-^"
+
+read filename
+
+touch ${filename}
+
+chmod +x ${filename}
+
+echo "#!/usr/bin/env bash" > ${filename}
