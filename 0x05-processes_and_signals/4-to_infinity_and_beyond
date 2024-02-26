@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script display test
+
+while [ i ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
