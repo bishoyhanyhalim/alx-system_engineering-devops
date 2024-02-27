@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # this task stoped and killed
 
-kill $(pgrep 7-highlander)
+pkill -f -SIGKILL 7-highlander
