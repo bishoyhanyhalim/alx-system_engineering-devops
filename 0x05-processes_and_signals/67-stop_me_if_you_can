@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script stop loops 2
+
+pkill -f 7-highlander
