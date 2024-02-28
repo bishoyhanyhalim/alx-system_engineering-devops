@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "enter file name <_>"
+
+read fileName
+
+touch ${fileName}
+
+chmod +x ${fileName}
+
+echo "#!/usr/bin/env ruby" > ${fileName}
