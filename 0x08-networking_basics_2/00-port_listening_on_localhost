@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# thsi show the ports
+
+nc -l localhost 98
