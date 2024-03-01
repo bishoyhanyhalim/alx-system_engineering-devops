@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this task shoe ports list
+
+netstat -l --program
