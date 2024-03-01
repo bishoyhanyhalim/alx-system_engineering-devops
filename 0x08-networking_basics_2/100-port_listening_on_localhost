@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# thsi show the ports
+# this is task who ports
 
 nc -l localhost 98
