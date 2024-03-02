@@ -1,4 +1,4 @@
-#!/urs/bin/env bash
+#!/usr/bin/env bash
 # this task print ping 5 time
 
 if [ $# -eq 0 ]
