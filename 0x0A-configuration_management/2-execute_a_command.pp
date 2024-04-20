@@ -1,6 +1,6 @@
 # this is kill file
 
-exce { 'pkill':
+exec { 'pkill':
   command  => 'pkill killmenow',
   provider => 'shell',
 }
