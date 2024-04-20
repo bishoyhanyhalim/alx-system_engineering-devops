@@ -1,3 +1,4 @@
+#!/usr/bin/pup
 # this command for instull flask
 
 package { 'flask':
