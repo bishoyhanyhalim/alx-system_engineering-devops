@@ -1,0 +1,5 @@
+#this is connict to server with out password
+
+Host 509946-web-01
+  IdentityFile ~/.ssh/school
+  PasswordAuthentication no
