@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# creast new rsa key for server
+ssh-keygen -t rsa -f school -b 4096 -N betty
