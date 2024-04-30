@@ -1,39 +1,24 @@
 #!/usr/bin/env bash
+# this task for web 1 to web 2
 # shellcheck disable=SC2154
-# Configure Nginx for copy web 01 to web 02
 
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install nginx
 
 sudo ufw allow 'Nginx HTTP'
 
-# make dirctory then change mode for all permission
 sudo mkdir -p /var/www/html
+
 sudo chmod -R 755 /var/www
 
-echo "Hello World!" > /var/www/html/index.html
+echo 'Hello World!' |sudo tee  /var/www/html/index.html
 
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+echo "Ceci n'est pas une page" |sudo tee /var/www/html/404.html
 
-echo "server {
-   server_name _;
-   tadd_header X-Served-By $hostname;
-   rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
-   listen 80 default_server;
-   listen [::]:80 default_server;
-   
-   root /var/www/html;
-   index index.html;
-   location /redirect_me {
-      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-   }
-   error_page 404 /custom_404.html;
-   location = /custom_404.html{
-      internal;
-   }
-}" > default
-
-sudo mv -f default /etc/nginx/sites-available/default
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
