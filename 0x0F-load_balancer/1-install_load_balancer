@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
-# Install the load server
+# this script for load balancer server lb-01
 
 sudo apt-get -y update
-apt-get -y install haproxy
+sudo apt-get -y install haproxy
 
-server_config=\
+server_code=\
 "
-frontend  ehoneah-frontend
-        bind *:80
-        mode http
-        default_backend ehoneah-backend
-backend ehoneah-backend
-        balance roundrobin
-        server 63210-web-01 100.25.19.204:80 check
-        server 63210-web-02 54.157.159.85:80 check
-"
-echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+frontend http80-frontend
+	bind *:80
+	mode http
+	default_backend allServers-backend
 
+backend allServers-backend
+	balance roundrobin
+	server 509946-web-01 54.175.199.26:80 check
+	server 509946-web-02 107.23.117.21:80 check
+"
+
+echo "$server_code" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
