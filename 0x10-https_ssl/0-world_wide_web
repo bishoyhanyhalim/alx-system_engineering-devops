@@ -1,1 +1,19 @@
 #!/usr/bin/env bash
+# this is a shell script
+# shellcheck disable=SC2086
+
+for_the_config () {
+    script=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$2 $script" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+}
+
+if [ "$#" -eq 1 ]
+then
+  for_the_config "$1" "www"
+  for_the_config "$1" "lb-01"
+  for_the_config "$1" "web-01"
+  for_the_config "$1" "web-02"
+elif [ "$#" -eq 2 ]
+then
+  for_the_config "$1" "$2"
+fi
